@@ -1,3 +1,9 @@
+<?php
+	function hello($comment){
+		return 'Hello!!'.htmlspecialchars($comment);
+	}
+
+?>
 <!DOCTYPE html>
 <html lang ="ja">
 <head>
@@ -10,16 +16,10 @@
 	<input type="text" name="comment" /><br />
 	<input type="submit" value="送信"/>
 	</form>
-	Hello!!
 	<?php
 		if(isset($_POST['comment'])){
-		$comment = $_POST['comment'];
-
-		function hello($comment){
-			return htmlspecialchars($comment);
+			echo hello($comment);
 		}
-		}
-		echo hello($comment);
 	?>
 	さん
 </body>
